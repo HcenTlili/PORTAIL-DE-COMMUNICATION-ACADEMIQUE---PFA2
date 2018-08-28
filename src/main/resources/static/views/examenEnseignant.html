@@ -1,0 +1,45 @@
+<link rel="stylesheet" type="text/css" href="../styles/courses_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/courses_responsive.css">
+
+<style>
+	body{
+    background-color: #CCCCCC;
+}
+	
+</style>
+<div class="home">
+
+		<div class="hero_slider_container">
+			<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(../images/search_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Examens</span></h1>
+						</div>
+					</div>
+				</div>
+		</div>
+				
+</div>
+
+<form class="form-horizontal">
+		<div class="form-group">
+				 <label class="control-label col-sm-4" for="classeID">Classe :</label>
+				<div class="col-sm-8">
+					<select id="classeID" class="form-control "
+					 ng-model="examen.classeExamen" 
+        			ng-options="item as item for item in idsClasses" 
+        			>
+					</select>
+				</div>
+			</div>
+		<div class="form-group">
+				 <label class="control-label col-sm-4" for="classeID">Contenu de l'examen :</label>
+				<div class="col-sm-8">
+					<textarea rows="4" cols="50"  ng-model="examen.contenuExamen" ></textarea>
+				</div> 
+			</div>
+			<div class="form-actions">
+            <button type="submit"  ng-click="authentifier()" class="btn btn-primary">Enregistrer Examen</button>
+           </div>
+	</form>

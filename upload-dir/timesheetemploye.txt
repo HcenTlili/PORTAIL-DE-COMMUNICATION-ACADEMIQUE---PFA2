@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>timesheetemploye</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+	<link href="data/w3.css" type="text/css" rel="stylesheet"/>
+    <link href="files/timesheetemploye/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/ie.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="files/timesheetemploye/data.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u158" class="ax_default flow_shape">
+        <img id="u158_img" class="img " src="images/timesheetemploye/u158.png"/>
+        <!-- Unnamed () -->
+        <div id="u159" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Menu) -->
+      <div id="u160" class="ax_default">
+        <img id="u160_menu" class="img " src="images/timesheetemploye/u160_menu.png" alt="u160_menu"/>
+
+        <!-- Unnamed (Table) -->
+        <div id="u161" class="ax_default">
+
+          <!-- Unnamed (Menu Item) -->
+          <div id="u162" class="ax_default menu_item">
+            <img id="u162_img" class="img " src="images/timesheetemploye/u162.png"/>
+            <!-- Unnamed () -->
+            <div id="u163" class="text" style="visibility: visible;">
+              <p><span>Profil</span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Menu Item) -->
+          <div id="u164" class="ax_default menu_item">
+            <img id="u164_img" class="img " src="images/timesheetemploye/u164.png"/>
+            <!-- Unnamed () -->
+            <div id="u165" class="text" style="visibility: visible;">
+              <p><span>Contact</span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (Menu Item) -->
+          <div id="u166" class="ax_default menu_item">
+            <img id="u166_img" class="img " src="images/timesheetemploye/u166.png"/>
+            <!-- Unnamed () -->
+            <div id="u167" class="text" style="visibility: visible;">
+              <p><span>TimeSheet</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u168" class="ax_default flow_shape">
+        <div id="u168_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u169" class="text" style="visibility: visible;">
+          <p style="font-size:36px;"><span style="font-family:'Bookman Old Style Normal', 'Bookman Old Style';font-weight:300;color:#99CCFF;">TimeSheet</span><span style="font-family:'Arial Normal', 'Arial';font-weight:400;font-size:13px;"> </span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u170" class="ax_default icon">
+        <img id="u170_img" class="img " src="images/timesheetemploye/u170.png"/>
+        <!-- Unnamed () -->
+        <div id="u171" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u172" class="ax_default flow_shape">
+        <div id="u172_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u173" class="text" style="visibility: visible;">
+          <p><span>15 janvier 2016</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u174" class="ax_default label">
+        <div id="u174_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u175" class="text" style="visibility: visible;">
+          <p><span>Modifier la date</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Group) -->
+      <div id="u176" class="ax_default">
+<form action="insert.php" method="post">
+        
+        <!-- Unnamed (HTML Button) -->
+        <div id="u282" class="ax_default html_button">
+          <input id="u282_input" type="submit" value="Submit"/>
+        </div>
+      </div>
+        </form>
+		<div id="u178" class="ax_default">
+		 <?php
+        $connect= mysqli_connect('localhost','root','');
+        mysqli_select_db($connect,'conception');
+         
+        $reponse = mysqli_query($connect,"SELECT * FROM timesheet ");
+        ?>
+         
+        <?php
+            while($donnees = mysqli_fetch_array($reponse))
+            {
+            ?>
+        <table  border = 1  class="w3-table-all w3-centered w3-hoverable">
+		<thead>
+                <tr class="w3-light-grey">
+                    <th>Lundi</th>
+                    <th>Mardi</th>
+                    <th>Mercredi</th>
+                    <th>Jeudi</th>
+                    <th>vendredi</th>
+                    <th>Samedi</th>
+                    <th>Dimanche</th>
+                </tr>
+           </thead> 
+                <tr>
+                    <td ><?php echo $donnees['un']; ?></td>
+                    <td><?php echo $donnees['deux']; ?></td>
+                    <td><?php echo $donnees['trois']; ?></td>
+                    <td><?php echo $donnees['quatre']; ?></td>
+                    <td><?php echo $donnees['cinq']; ?></td>
+                    <td><?php echo $donnees['six']; ?></td>
+                    <td><?php echo $donnees['sept']; ?></td>
+                </tr>
+             <tr>
+                    <td><?php echo $donnees['huit']; ?></td>
+                    <td><?php echo $donnees['neuf']; ?></td>
+                    <td><?php echo $donnees['dix']; ?></td>
+                    <td><?php echo $donnees['onze']; ?></td>
+                    <td><?php echo $donnees['douze']; ?></td>
+                    <td><?php echo $donnees['treize']; ?></td>
+                    <td><?php echo $donnees['quatorze']; ?></td>
+                </tr>
+            <tr>
+                    <td><?php echo $donnees['queize']; ?></td>
+                    <td><?php echo $donnees['seize']; ?></td>
+                    <td><?php echo $donnees['dixsept']; ?></td>
+                    <td><?php echo $donnees['dixhuit']; ?></td>
+                    <td><?php echo $donnees['dixneuf']; ?></td>
+                    <td><?php echo $donnees['vingt']; ?></td>
+                    <td><?php echo $donnees['vingtun']; ?></td>
+                </tr>
+            
+        </table>
+        <?php
+            } 
+           mysqli_close($connect); 
+            ?>
+			</div>
+      <!-- Unnamed (Rectangle) -->
+      <div id="u283" class="ax_default label">
+        <div id="u283_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u284" class="text" style="visibility: visible;">
+          <p><span style="font-family:'Arial Black', 'Arial';font-weight:900;color:#008000;">Week (39)</span><span style="font-family:'Arial Normal', 'Arial';font-weight:400;"> 15 Janvier 2016-22 Janvier 2016</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u285" class="ax_default primary_button">
+        <div id="u285_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u286" class="text" style="visibility: visible;">
+          <p><span>Previeus</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u287" class="ax_default primary_button">
+        <div id="u287_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u288" class="text" style="visibility: visible;">
+          <p><span>Next</span></p>
+        </div>
+      </div>
+
+      <!-- admin (Group) -->
+      <div id="u289" class="ax_default" data-label="admin">
+
+        <!-- Unnamed (Image) -->
+        <div id="u290" class="ax_default image">
+          <img id="u290_img" class="img " src="images/profilemployee/u64.png"/>
+          <!-- Unnamed () -->
+          <div id="u291" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Image) -->
+        <div id="u292" class="ax_default image">
+          <img id="u292_img" class="img " src="images/profilemployee/u72.png"/>
+          <!-- Unnamed () -->
+          <div id="u293" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u294" class="ax_default label">
+          <div id="u294_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u295" class="text" style="visibility: visible;">
+            <p><span>Go To Profil</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Rectangle) -->
+        <div id="u296" class="ax_default label">
+          <div id="u296_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u297" class="text" style="visibility: visible;">
+            <p><span>Log Out</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (Image) -->
+        <div id="u298" class="ax_default image">
+          <img id="u298_img" class="img " src="images/profilemployee/u70.png"/>
+          <!-- Unnamed () -->
+          <div id="u299" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+	
+  </body>
+</html>

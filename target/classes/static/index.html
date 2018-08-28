@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Course</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Course Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+
+
+<link rel="stylesheet" href="css/angularjs-datetime-picker.css" />
+
+<link rel="stylesheet" type="text/css" href="styles/elements_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/elements_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+</head>
+
+<body ng-app="App" ng-controller="IndexController as indexCtrl">
+
+<div class="super_container">
+
+	<!-- Header -->
+
+	<header class="header d-flex flex-row">
+		<div class="header_content d-flex flex-row align-items-center">
+			<!-- Logo -->
+			<div class="logo_container">
+				<div class="logo">
+					<a ui-sref="acceuil"><img src="images/logo.png" alt="">
+					<span>course</span></a>
+				</div>
+			</div>
+
+			<!-- Main Navigation -->
+			<nav class="main_nav_container">
+				<div class="main_nav" >
+					<ul class="main_nav_list">
+						<li class="main_nav_item"><a ui-sref="acceuil">Acceuil</a></li>
+<!-- 						<li class="main_nav_item"><a ui-sref="gestioncours">Admin_cours_test</a></li>
+						<li class="main_nav_item"><a ui-sref="enseignants">Admin_enseignant_test</a></li> -->
+						<li class="main_nav_item"><a ui-sref="cours">Nos Cours</a></li>
+						<li class="main_nav_item"><a ui-sref="statistiques ">Statistiques</a></li>
+						<li class="main_nav_item"><a ui-sref="blog">Forum</a></li>
+						<li class="main_nav_item"><a ui-sref="contacts">Contact</a></li>
+						<li class="main_nav_item"><a ui-sref="" data-toggle="modal" data-target="#inscriptionModal"><i class="fas fa-sign-in-alt"></i> Inscription</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="header_side d-flex flex-row justify-content-center align-items-center">
+			<a ui-sref="" data-toggle="modal" style="color:black" data-target="#connexionModal" ><i class="fas fa-user"></i> Se connecter</button>
+		</div>
+
+		<!-- Hamburger -->
+		<div class="hamburger_container">
+			<i class="fas fa-bars trans_200"></i>
+		</div>
+
+	</header>
+	
+	<!-- Menu -->
+	<div class="menu_container menu_mm">
+
+		<!-- Menu Close Button -->
+		<div class="menu_close_container">
+			<div class="menu_close"></div>
+		</div>
+
+		<!-- Menu Items -->
+		<div class="menu_inner menu_mm">
+			<div class="menu menu_mm">
+				<ul class="menu_list menu_mm">
+					<li class="menu_item menu_mm"><a ui-sref="acceuil">Acceuil</a></li>
+					<li class="menu_item menu_mm"><a ui-sref="cours">Nos Cours</a></li>
+					<li class="menu_item menu_mm"><a ui-sref="statistiques ">Statistiques</a></li>
+					<li class="menu_item menu_mm"><a ui-sref="blog">Forum</a></li>
+					<li class="menu_item menu_mm"><a ui-sref="contacts">Contact</a></li>
+				</ul>
+
+				<!-- Menu Social -->
+				
+				<div class="menu_social_container menu_mm">
+					<ul class="menu_social menu_mm">
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-instagram"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-twitter"></i></a></li>
+					</ul>
+				</div>
+
+				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	
+	<div ui-view autoscroll="true"></div>
+	<!-- Modals :  -->
+
+  
+<div class="modal fade" id ="inscriptionModal" ng-controller="registerCtrl">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					Devenir Un membre de Course
+				</div>
+				<div class="modal-body">
+						<div name="form" >
+
+  <div class="panel panel-primary">
+    <div class="panel-body">
+     <form class="form-horizontal" name="customerForm" ng-submit="registerCtrl.ajouter()">
+			<div class="form-group">
+				<label class="control-label col-sm-8" for="firstnameID">Nom :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="nom" id="firstnameID"
+						placeholder="Saisir Votre Nom" ng-model="etudiant.nom"/>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-8" for="lastnameID">Prenom :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="prenom" id="lastnameID"
+						placeholder="Saisir Votre Prenom" ng-model="etudiant.prenom"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-10" for="lastnameID">Nom d'utilisateur:</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="username" id="usernameID"
+						placeholder="Saisir Votre Prenom" ng-model="etudiant.username"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-8" for="mdpID">Mot De Passe :</label>
+				<div class="col-sm-8">
+					<input type="password" class="form-control" name="mdp" id="mdpID"
+						placeholder="Saisir Votre Prenom" ng-model="etudiant.password"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-8" for="ageID">Age :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="age" id="ageID"
+						placeholder="Saisir Votre age" ng-model="etudiant.age"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-8" for="SexeID">Sexes :</label>
+				<div class="col-sm-8">
+					<select id="classeID" class="form-control " ng-model="etudiant.sexe" ng-options="sexe as sexe for sexe in sexes"  ng-change="etudiantsCtrl.updatePhoto()" >
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-8" for="mailID">Adresse Mail :</label>
+				<div class="col-sm-8">
+					<input type="mail" class="form-control" name="mail" id="mailID"
+						placeholder="Saisir Votre Adresse Mail" ng-model="etudiant.addressMail" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-8" for="phoneID">Numero de Telephone :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="phone" id="phoneID"
+						placeholder="Saisir Votre Numero de Telephone" ng-model="etudiant.telephone"/>
+				</div>
+			</div>
+
+		
+			 
+			<div class="form-group">
+				<label class="control-label col-sm-8" for="descriptionID">Description :</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" name="description" id="descriptionID" ng-model="etudiant.description" rows="5" cols="6"/></textarea>
+				</div>
+			</div>
+			
+		
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-6">
+					<button type="submit" class="btn btn-primary" ng-click="ajouter()">Envoyer</button>
+				</div>
+			</div>
+			
+		</form>
+	</div>
+ 
+</div>
+</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit"  class="btn btn-default pull-right" ui-sref="" data-dismiss="modal">Annuler</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+	
+   
+    <div class="modal fade" id ="connexionModal" >
+		<div class="modal-dialog modal-md">
+			 <div class="modal-content">
+			 	  <div class="modal-header">
+        				<h1 class="modal-title">Choisir Votre rôle</h1>
+      				</div>
+      				<div class="modal-body">
+      					<div class="container">
+					<div class="row">
+						
+						<!-- Milestone -->
+						<div class="col-sm-4 milestone_col">
+							<a href="admin.html#!/login">
+							<div class="milestone text-center">
+								<div class="milestone_icon"><img src="images/man-with-tie (1).svg" alt="https://www.flaticon.com/authors/zlatko-najdenovski"></div>
+								<p>Admin</p></a>
+							</div>
+						
+						<div class="col-sm-4 milestone_col">
+							<a href="enseignant.html#!/loginenseignant">
+							<div class="milestone text-center">
+								<div class="milestone_icon"><img src="images/milestone_1.svg" alt="https://www.flaticon.com/authors/zlatko-najdenovski"></div>
+								
+							</div><p>Enseignant</p></a>
+						</div>
+						<div class="col-sm-4 milestone_col">
+						<a href="etudiant.html#!/loginetudiant">
+							<div class="milestone text-center">
+								<div class="milestone_icon"><img src="images/milestone_4.svg"" alt="https://www.flaticon.com/authors/zlatko-najdenovski"></div>
+								
+							</div><p>Etudiant</p></a>
+						</div>
+						</div>
+						</div>
+						</div>
+      					
+      				</div>
+      				<div class="modal-footer">
+      					<button type="submit"  class="btn btn-default" ui-sref="" data-dismiss="modal">Annuler</button>
+      				</div>
+        				</div>
+        				</div>
+        				</div>
+        				
+        				
+        				
+        				
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="container">
+			
+		
+
+			<!-- Footer Content -->
+
+			<div class="footer_content">
+				<div class="row">
+
+					<!-- Footer Column - About -->
+					<div class="col-lg-4 footer_col">
+
+						<!-- Logo -->
+						<div class="logo_container">
+							<div class="logo">
+								<img src="images/logo.png" alt="">
+								<span>course</span>
+							</div>
+						</div>
+
+						<p class="footer_about_text">Course est un portail de communication académique développé au cours d'un projet de fin d'année dans 
+						le but d'améliorer l'éducation numérique.</p>
+
+					</div>
+
+
+
+					<!-- Footer Column - Usefull Links -->
+
+					<div class="offset-lg-1 col-lg-2 footer_col">
+						<div class="footer_column_title">Menu</div>
+						<div class="footer_column_content">
+							<ul>
+								<li class="footer_list_item"><a ui-sref="acceuil">Acceuil</a></li>
+								<li class="footer_list_item"><a ui-sref="cours">Nos Cours</a></li>
+								<li class="footer_list_item"><a ui-sref="statistiques ">Statistiques</a></li>
+								<li class="footer_list_item"><a ui-sref="blog">Forum</a></li>
+								<li class="footer_list_item"><a ui-sref="contacts">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Footer Column - Contact -->
+
+					<div class="offset-lg-1 col-lg-3 footer_col">
+						<div class="footer_column_title">Contact</div>
+						<div class="footer_column_content">
+							<ul>
+								<li class="footer_contact_item">
+									<div class="footer_contact_icon">
+										<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>
+									Ecole nationale d'ingénieurs de Tunis
+								</li>
+								<li class="footer_contact_item">
+									<div class="footer_contact_icon">
+										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>
+									Course mobile
+								</li>
+								<li class="footer_contact_item">
+									<div class="footer_contact_icon">
+										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
+									</div>course@contact.tn
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Footer Copyright -->
+
+			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
+
+				<!-- <div class="footer_social ml-sm-auto">
+					<ul class="menu_social">
+						<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+						<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+						<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+						<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+					</ul>
+				</div> -->
+			</div>
+
+		</div>
+	</footer>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/greensock/TweenMax.min.js"></script>
+<script src="plugins/greensock/TimelineMax.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/greensock/animation.gsap.min.js"></script>
+<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="js/custom.js"></script>
+
+<script type ="text/javascript" src="js/chart.js"></script>
+
+	<script type ="text/javascript" src="angularjs/angular.js"></script>
+<script type ="text/javascript" src="angularjs/angular-ui-router.js"></script>
+<script type ="text/javascript" src="angularjs/angular-clock.js"></script>
+<script type ="text/javascript" src="angularjs/angular-cookies.js"></script>
+<script type ="text/javascript" src="angularjs/angular-pdf-viewer.min.js"></script>
+<script type ="text/javascript" src="angularjs/angular-chart.js"></script>
+ <script src="angularjs/angularjs-datetime-picker.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script> -->
+
+<script type ="text/javascript" src="js/myApp.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<link rel="stylesheet" type="text/css" href="../styles/courses_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/courses_responsive.css">
+
+<div class="home">
+
+		<div class="hero_slider_container">
+			<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(../images/search_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Quiz</span></h1>
+						</div>
+					</div>
+				</div>
+		</div>
+				
+</div>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../styles/creerquiz.css">
+<script src="../js/creerquiz.js"></script>
+	    <!--   Big container   -->
+	    <div class="container">
+	        <div class="row">
+		        <div class="col-sm-10 col-sm-offset-1">
+		            <!-- Wizard container -->
+		            <div class="wizard-container">
+		                <div class="card wizard-card" data-color="orange" id="wizard">
+		                    <form method="">
+		                <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
+
+		                    	<div class="wizard-header">
+		                        	<h3 class="wizard-title">
+		                        		Quiz
+		                        	</h3>
+									<h5>Formulaire Pour creer votre quizz</h5>
+		                    	</div>
+								<div class="wizard-navigation">
+									<ul>
+			                            <li><a ui-sref="" ng-click="afficher('init')" data-toggle="tab">Initialisation</a></li>
+			                            <li><a ui-sref="" ng-click="afficher('core')" data-toggle="tab">Questions - reponses</a></li>
+			                            <li><a ui-sref="" ng-click="afficher('fin')" data-toggle="tab">Enregister</a></li>
+			                        </ul>
+								</div>
+
+		                        <div class="">
+		                            <div class="tab-pane" id="init" ng-show="init">
+		                            	<div class="row">
+			                            	<div class="col-sm-12">
+			                                	<h4 class="info-text"> Initiation de Quiz.</h4>
+			                            	</div>
+		                                	<div class="col-sm-6 col-sm-offset-3">
+												<div class="input-group">
+													<div class="form-group label-floating">
+			                                          	<label class="control-label">Titre de Quiz :</label>
+			                                          	<input name="name" type="text" class="form-control" ng-model="quizCtrl.titre">
+			                                        </div>
+												</div>
+
+												<div class="input-group">
+			                                          		<label >Cours en question :</label>
+                											<select class="form-control" id="classeID" class="form-control " ng-model="quizCtrl.coursquiz" 
+        			                                                 ng-options="item.nomCours as item.nomCours for item in  listecours" ng-init="coursquiz = listecours[0].nomCours">
+                											</select>
+			                                        
+												</div>
+												
+												<div class="input-group">
+													<div class="form-group label-floating">
+		                                        		<div class="form-group label-floating">
+			                                          		<label class="control-label">Date de Quiz :</label>
+			                                          		<input type="datetime-local"  ng-model="date4" datetime-picker hour="23" minute='59'class="form-control"/>
+		                                        			
+	                                        			</div>
+		                                    		</div>
+												</div>
+
+		                                	</div>
+		                                	
+		                            	</div>
+		                            	
+		                            </div>
+		                            
+		                            <div class="tab-pane" id="core" ng-show="core">
+		                                <h4 class="info-text">Ajouter Un Question </h4>
+		                                <div class="row">
+												<div class="input-group">
+													<div class="form-group label-floating">
+														<div class="col-sm-6 col-sm-offset-3">
+		                                    				<label class="control-label">Question {{compteur+1}}</label>
+		                                    				<input class="form-control" type="text" ng-model="quizCtrl.quest.question">
+	                                    				</div>
+		                                    		</div>
+		                                    	</div>
+                                    	</div>
+                                    	<div class="row">
+                                    		<div class="col-sm-4">
+                                    			<div class="input-group">	
+													<div class="form-group label-floating">
+														<label class="control-label">Proposition 1</label>
+														<input type="text" class="form-control" ng-model="quizCtrl.rs0">
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-4">
+												<div class="input-group">
+													<div class="form-group label-floating">
+														<label class="control-label">Proposition 2</label>
+														<input type="text" class="form-control" ng-model="quizCtrl.rs1">
+													</div>
+												</div>
+											</div>	
+											<div class="col-sm-4">
+												<div class="input-group">
+													<div class="form-group label-floating">
+														<label class="control-label">Proposition 3</label>
+														<input type="text" class="form-control" ng-model="quizCtrl.rs2">
+													</div>
+												</div>
+											</div>
+										<div class="col-sm-6 col-sm-offset-3">		
+												<div class="input-group">
+													<div class="form-group label-floating">
+														<label class="control-label">Proposition correcte</label> <select class="form-control" ng-model="quizCtrl.rep" ng-options ="l for l in liste">
+														{{l}}</select>
+													</div>
+												</div>
+		                                </div>
+		                            </div>
+		                            </div>
+		                            <div class="tab-pane" id="fin" ng-show="fin">
+		                                <div class="row">
+		                                    
+		                                </div>
+		                            </div>
+		                            <div class="row">
+		                            	<div class="col-sm-4">
+		                            		<button class='btn btn-default'  ng-click="quizCtrl.annuler()" >Annuler</button>
+		                            	</div>
+		                            	<div class="col-sm-4">
+		                            		
+		                           		</div>
+		                           		<div class="col-sm-4">
+		                            		<button class='btn btn-danger pull-right' class="btn btn-danger"  ng-click="quizCtrl.ajouterQuestion(quizCtrl.rep)" ng-show="core">Ajouter Question</button> 
+		                           			<button class='btn btn-danger'  ng-show="fin" ng-click="quizCtrl.saveQuiz()">Enregistrer</button>
+		                           		</div>
+		                            </div>
+		                        		         
+		                        </div>
+	                        	<div class="">
+
+	                                </div>
+	                                <div class="clearfix"></div>
+	                        	</div>
+		               
+		            </div> <!-- wizard container -->
+		        </div>
+	    	</div> <!-- row -->
+		</div> <!--  big container -->
+
+<!-- <div class="container spacer" >
+  <div class="panel panel-default">
+     <div class="panel-heading">Formulaire d'ajout d'un quiz</div>
+     <div class="panel-body">
+     <form>
+     <label>Cours en question :</label>
+
+    <div>  <select id="classeID" class="form-control "
+					 ng-model="coursquiz" 
+        			ng-options="item.nomCours as item.nomCours for item in  listecours" >
+					</select></div>
+	<h2 class="bold">Scrollable Menu</h2>
+            <div class="row">
+            <div class="col-sm-6 btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Scrollable Menu</button>
+                <ul class="dropdown-menu scrollable-menu" role="menu"  >
+                    <li ng-model="coursquiz" 
+                ng-repeat="item in  listecours" ><a ui-sref="">{{item.nomCours}}</a></li>
+
+                </ul>
+            </div>
+            </div>
+            <lable>
+			<div class="row">
+			<div class="col-sm-6">
+					<input type="button" class="btn btn-default" value="Saisissez le quiz" data-toggle="modal" data-target="#quizQuestionsModal">
+				</div>
+			</div>	
+		    <div class="row">
+		    	<div class="col-sm-6">
+					<input type="button" class="btn btn-default" ng-click="saveQuiz()" value="sauvegarder">
+				</div>
+		    </div>
+     </form>
+     </div>
+</div>
+<div class="modal fade" id="quizQuestionsModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      Modal content
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Faites le saisie des questions , les propositions et la bonne réponse</h4>
+        </div>
+        <div class="modal-body">
+        <form class="form-horizontal">
+         <div ng-repeat="l in lis ">
+         {{l}}
+<p>hcen</p>
+</div>
+<label>Question 1</label><input type="text" ng-model="question1"><br>
+<label>Propositions</label><input type="text" ng-model="proposition11"><input type="text" ng-model="proposition12"><input type="text" ng-model="proposition13">
+<div><label>Proposition correcte</label>  <select ng-model="reponse1" ng-options ="l for l in liste">
+{{l}}</select></div>
+<label>Question 2</label><input type="text" ng-model="question2"><br>
+<label>Propositions</label><input type="text" ng-model="proposition21"><input type="text" ng-model="proposition22"><input type="text" ng-model="proposition23">
+<div> <label>Proposition correcte</label> <select ng-model="reponse2" ng-options ="l for l in liste">
+{{l}}</select></div>
+<label>Question 3</label><input type="text" ng-model="question3"><br>
+<label>Propositions</label><input type="text" ng-model="proposition31"><input type="text" ng-model="proposition32"><input type="text" ng-model="proposition33">
+<div> <label>Proposition correcte</label> <select ng-model="reponse3" ng-options ="l for l in liste">
+{{l}}</select></div>
+<label>Question 4</label><input type="text" ng-model="question4"><br>
+<label>Propositions</label><input type="text" ng-model="proposition41"><input type="text" ng-model="proposition42"><input type="text" ng-model="proposition43">
+<div> <label>Proposition correcte</label> <select ng-model="reponse4" ng-options ="l for l in liste">
+{{l}}</select></div>
+<label>Question 5</label><input type="text" ng-model="question5"><br>
+<label>Propositions</label><input type="text" ng-model="proposition51"><input type="text" ng-model="proposition52"><input type="text" ng-model="proposition53">
+<div><label>Proposition correcte</label>  <select ng-model="reponse5" ng-options ="l for l in liste">
+{{l}}</select></div>
+<label>Question 6</label><input type="text" ng-model="question6"><br>
+<label>Propositions</label><input type="text" ng-model="proposition61"><input type="text" ng-model="proposition62"><input type="text" ng-model="proposition63">
+<div><label>Proposition correcte</label>  <select ng-model="reponse6" ng-options ="l for l in liste">
+{{l}}</select></div>
+<label>Question 7</label><input type="text" ng-model="question7"><br>
+<label>Propositions</label><input type="text" ng-model="proposition71"><input type="text" ng-model="proposition72"><input type="text" ng-model="proposition73">
+<div><label>Proposition correcte</label>  <select ng-model="reponse7" ng-options ="l for l in liste">
+{{l}}</select></div>
+<label>Question 8</label><input type="text" ng-model="question8"><br>
+<label>Propositions</label><input type="text" ng-model="proposition81"><input type="text" ng-model="proposition82"><input type="text" ng-model="proposition83">
+<div><label>Proposition correcte</label>  <select ng-model="reponse8" ng-options ="l for l in liste">
+{{l}}</select></div>
+<label>Question 9</label><input type="text" ng-model="question9"><br>
+<label>Propositions</label><input type="text" ng-model="proposition91"><input type="text" ng-model="proposition92"><input type="text" ng-model="proposition93">
+<div> <label>Proposition correcte</label> <select ng-model="reponse9" ng-options ="l for l in liste">
+{{l}}</select></div>
+<label>Question 10</label><input type="text" ng-model="question10"><br>
+<label>Propositions</label><input type="text" ng-model="proposition101"><input type="text" ng-model="proposition102"><input type="text" ng-model="proposition103">
+<div> <label>Proposition correcte</label> <select ng-model="reponse10" ng-options ="l for l in liste">
+{{l}}</select></div>
+        </form>
+        <hr/>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"  data-dismiss="modal">Done</button>
+        </div>
+      </div>
+      
+ </div> 
+</div>
+ -->

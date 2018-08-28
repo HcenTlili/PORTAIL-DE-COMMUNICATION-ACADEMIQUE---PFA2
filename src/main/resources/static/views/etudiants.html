@@ -1,0 +1,234 @@
+<link href="../dashboard/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dashboard/css/helper.css" rel="stylesheet">
+    <link href="../dashboard/css/style.css" rel="stylesheet">
+
+<div class="page-wrapper">
+	<!-- Bread crumb -->
+         <div class="row page-titles">
+             <div class="col-md-5 align-self-center">
+                 <h3 class="text-primary">Etudiants</h3> 
+             </div>
+             <div class="col-md-7 align-self-center">
+                 <ol class="breadcrumb">
+                     <li class="bredcrumb-item"><a href="javascript:void(0)">Tableau de Board </a></li>
+                     <li class="breadcrumb-item active">> Etudiants</li>
+                 </ol>
+              </div>
+          </div>
+     <!-- End Bread crumb -->
+<!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                               
+                                <div class="table-responsive m-t-40">
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Prenom</th>
+                                                <th>Classe</th>
+                                                <th>Age</th>
+                                                <th>Date d'Inscription</th>
+                                                <th>Voir Profil</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Prenom</th>
+                                                <th>Classe</th>
+                                                <th>Age</th>
+                                                <th>Date d'Inscription</th>
+                                                <th>Voir Profil</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr ng-repeat="e in etudiantsCtrl.etudiants">
+                                                <td>{{e.nom}}</td>
+                                                <td>{{e.prenom}}</td>
+                                                <td>{{e.idClasse}}</td>
+                                                <td>{{e.age}}</td>
+                                                <td>{{e.dateDeCreation}}</td>
+                                                <td>
+                                                	<button class="btn btn-default" ng-click="getSelectedEtudiant(e.idEtudiant)">Voir Profil</button>
+                                                </td>
+                                            </tr>
+                                         </tbody>
+                                  </table>
+                             </div>
+                      	</div>
+                      	</div>
+                      	</div>
+                      	</div>
+                      	</div>
+
+</div>
+
+
+    <script src="../dashboard/js/lib/datatables/datatables.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/datatables-init.js"></script>
+
+
+
+
+
+
+
+<!-- <div class="container-fluid">
+<div class="row">
+<div name ="tab" class="col-sm-7">
+<table class="table table-bordered table-striped ">
+<tr ><th class="col-sm-2">Nom</th><th class="col-sm-2">Prenom</th><th class="col-sm-2">Classe</th><th class="col-sm-2">Profil</th>
+<th class="col-sm-2" >Action</th></tr>
+<tr ng-repeat="e in etudiantsCtrl.etudiants">
+<td>{{e.nom}}</td><td>{{e.prenom}}</td><td>{{e.idClasse}}</td><td><button class="btn btn-default" ng-click="etudiantsCtrl.getSelectedEtudiant(e.idEtudiant)">Voir Profil</button></td>
+<td><button class="btn btn-success btn-sm" ng-click="etudiantsCtrl.confirmer(e.idEtudiant)">Confirmer</button>
+<button class="btn btn-danger btn-sm" ng-click="etudiantsCtrl.refuser(e.idEtudiant)">Supprimer</button></td>
+</tr>
+</table>
+</div>
+<div class="col-sm-5">
+<div name="form" >
+
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <h3 class="text-on-pannel text-primary"><strong class="text-uppercase"> Ajouter un Etudiant </strong></h3>
+      <form class="form-horizontal" name="customerForm" ng-submit="etudiantsCtrl.ajouter()">
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="firstnameID">Nom :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="nom" id="firstnameID"
+						placeholder="Saisir Votre Nom" ng-model="etudiantsCtrl.user.nom"/>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="lastnameID">Prenom :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="prenom" id="lastnameID"
+						placeholder="Saisir Votre Prenom" ng-model="etudiantsCtrl.user.prenom"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="mdpID">Mot De Paase :</label>
+				<div class="col-sm-8">
+					<input type="password" class="form-control" name="mdp" id="mdpID"
+						placeholder="Saisir Votre Prenom" ng-model="etudiantsCtrl.user.mdp"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="ageID">Age :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="age" id="ageID"
+						placeholder="Saisir Votre age" ng-model="etudiantsCtrl.user.age"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="SexeID">Sexes :</label>
+				<div class="col-sm-8">
+					<select id="classeID" class="form-control " ng-init="etudiantsCtrl.user.sexe = etudiantsCtrl.sexes[0]" ng-model="etudiantsCtrl.user.sexe" ng-options="sexe for sexe in etudiantsCtrl.sexes"  ng-change="etudiantsCtrl.updatePhoto()" >
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="mailID">Adresse Mail :</label>
+				<div class="col-sm-8">
+					<input type="mail" class="form-control" name="mail" id="mailID"
+						placeholder="Saisir Votre Adresse Mail" ng-model="etudiantsCtrl.user.addressMail" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="phoneID">Numero de Telephone :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="phone" id="phoneID"
+						placeholder="Saisir Votre Numero de Telephone" ng-model="etudiantsCtrl.user.telephone"/>
+				</div>
+			</div>
+			
+			
+			
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="classeID">Classe :</label>
+				<div class="col-sm-8">
+					<select id="classeID" class="form-control " ng-model="etudiantsCtrl.user.idClasse" >
+					<option ng-repeat="c in etudiantsCtrl.classes" >{{c.idClasse}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-6">
+					<input type="button" class="btn btn-default" value="Choisir Une Photo" data-toggle="modal" data-target="#photoModal">
+				</div>
+			</div>
+			 
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="descriptionID">Description :</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" name="description" id="descriptionID"
+						 ng-model="etudiantsCtrl.user.description"/>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-6">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+			
+		</form>
+	</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="photoModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      Modal content
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Choisir Votre Photo de Profil</h4>
+        </div>
+        <div class="modal-body">
+        <form class="form-horizontal">
+         <div class="form-group">
+				<label class="control-label col-sm-4" for="photo">upload :</label>
+				<div class="col-sm-4">
+					<input type="file" file-model = "etudiantsCtrl.uploadedImage" class="form-control" name="photo" id="photoID"
+						placeholder="Choisir"/ >
+				</div>
+				<div class="form-group"> 
+			    <div class="col-sm-offset-3 col-sm-4">
+			      <button type="submit" class="btn btn-primary" ng-click = "etudiantsCtrl.doUploadImage()">Upload</button>
+			       </div>
+			</div>
+			<img width='150px' ng-src={{etudiantsCtrl.user.photo.urlPath}}/>
+			</div>
+        </form>
+        <hr/>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"  data-dismiss="modal">Done</button>
+        </div>
+      </div>
+      
+ </div>   
+	
+</div> -->			
+

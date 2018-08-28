@@ -1,0 +1,34 @@
+
+<div >
+
+<nav class="navbar navbar-inverse">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">MOOC</a>
+    </div>
+    <ul class="nav navbar-nav">
+    <li><a href="#"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+    <li><a ui-sref="etudiants">Etudiants</a></li>
+	<li><a ui-sref="classes">Classes</a></li>
+	<li><a ui-sref="fichiers">Fichiers</a></li>
+	<li><a ui-sref="profil">Profil</a></li>
+	<li><a ui-sref="enseignants">Enseignants</a></li>
+	<li><a ui-sref="cours">Cours</a></li>
+	<li><a ui-sref="saisiequiz">Saisir QUIZ</a></li>
+	<li><a ui-sref="passerquiz">passer QUIZ</a></li>
+    </ul>
+    <button class="btn btn-danger navbar-btn">Button</button>
+ 
+</nav>
+<strong>{{vm.user.firstName}}</strong>
+<div class="col-sm-9">
+<div ui-view>
+
+</div>
+</div>
+<!--  <script type ="text/javascript" src="../angularjs/angular.js"></script> -->
+<script type ="text/javascript" src="../angularjs/angular-ui-router.js"></script>
+<script type ="text/javascript" src="../angularjs/angular-clock.js"></script>
+<script type ="text/javascript" src="../angularjs/angular-cookies.js"></script>
+
+</div>

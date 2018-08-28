@@ -1,0 +1,105 @@
+    <link href="../dashboard/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dashboard/css/helper.css" rel="stylesheet">
+    <link href="../dashboard/css/style.css" rel="stylesheet">
+    
+    <meta charset="utf-8">
+
+<div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Contacter responsable</h3> </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Acceuil</a></li>
+                        <li class="breadcrumb-item active">Contacter responsable</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-content">
+                                    <!-- Left sidebar -->
+                                    <!-- End Left sidebar -->
+                                    <div class="">
+                                        <div class="mt-4">
+
+                                            <form role="form">
+												<div class="row">
+													<div class="col-sm-3">
+														<div class="form-group">
+															<p>Choisir la classe concernée </p>
+															<select id="classeID" class="form-control " ng-model="email.classe"  ng-options="idc.idClasse as idc.idClasse for idc in classes">
+															</select>
+														</div>
+													</div>
+													<div class="col-sm-3">
+														<p>Inclure la description du portail:</p>
+														<input type="checkbox" ng-model="email.inclusion">
+													</div>
+													<div class="col-sm-6">
+														<p>Ecrivez l email du responsable auquel vous voulez envoyer le resume </p>
+														<input type="text" class="form-control" ng-model="mail" >
+													</div>
+												</div>
+                                               
+                                                <div class="form-group">
+                                                    <textarea name="name" rows="8" cols="80" class="form-control" style="height:300px">
+
+
+                                                                                               </textarea>
+                                                </div>
+
+                                                <div class="form-group m-b-0">
+                                                    <div class="text-right">
+                                                        <button type="button" class="btn btn-success waves-effect waves-light m-r-5"><i class="fa fa-trash-o"></i></button>
+                                                        <button class="btn btn-purple waves-effect waves-light" ng-click="envoyer()"> <span>Envoyer</span> <i class="fa fa-send m-l-10"></i> </button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                        <!-- end card-->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End PAge Content -->
+            </div>
+            <!-- End Container fluid  -->
+        </div>
+        <!-- End Page wrapper  -->
+
+
+
+<!-- <div>
+<form>
+
+<p>Choisir la classe concernee </p>
+<select id="classeID" class="form-control " ng-model="email.classe"  ng-options="idc.idClasse as idc.idClasse for idc in classes">
+					</select><br/>
+<label>Inclure la description du portail:
+    <input type="checkbox" ng-model="email.inclusion">
+  </label><br/>
+<p>Ecrivez l email du responsable auquel vous voulez envoyer le resume </p>
+
+<p>
+
+<input type="text" ng-model="mail" >
+
+</p>
+<input type="button" class="btn btn-default" ng-click="envoyer()" value="Envoyer">
+
+</form>
+</div> 
+-->

@@ -1,0 +1,71 @@
+<link rel="stylesheet" type="text/css" href="../styles/contact_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/contact_responsive.css">
+
+
+
+<div class="home">
+	<div class="hero_slider_container">
+		<div class="hero_slide">
+				<div class="hero_slide_background" style="background-image:url(../images/contact_background.jpg)"></div>
+				<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+					<div class="hero_slide_content text-center">
+						<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Classe</span></h1>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<h2>Votres Collegues : </h2>
+	<div class="row mb-3">
+		<div class="col-md-3" ng-repeat="c in etuds" style="margin-top:15px">
+			<div class="d-flex flex-row border rounded" >
+	  			<div class="p-0 w-25">
+	  				<img ng-src={{c.photo.urlPath}} class="img-thumbnail border-0" />
+	  			</div>
+	  			<div class="pl-3 pt-2 pr-2 pb-2 w-75 border-left">
+	  					<h4 class="text-primary">{{c.nom}} {{c.prenom}}</h4>
+	  					<h5 class="text-info">{{c.addressMail}}</h5>
+						<p class="text-left m-0"><a href="#" class="btn btn-warning btn-sm"><i class="far fa-mai"></i> Contacter</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- <h1> La Classe</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+    <th >#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Username</th>
+      <th scope="col">E-mail</th>
+    </tr>
+  </thead >
+  <tbody >
+    <tr>
+      <th scope="row">{{$index}}</th>
+      <td>{{l.nom}}</td>
+      <td>{{l.prenom}}</td>
+      <td>{{l.username}}</td>
+      <td>{{l.email}}</td>
+    </tr>
+    
+  </tbody>
+</table> -->
+<!-- 
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-8">
+<p>La classe</p>
+<table class="table table-striped ">
+<tr><th>Nom</th><th>Prenom</th><th>nom d utilisateur</th><th>Email</th></tr>
+<tr ng-repeat="c in etuds ">
+<td>{{c.nom}}</td><td>{{c.prenom}}</td><td>{{c.username}}</td><td>{{c.addressMail}}</td>
+</tr>
+</table>
+</div> -->

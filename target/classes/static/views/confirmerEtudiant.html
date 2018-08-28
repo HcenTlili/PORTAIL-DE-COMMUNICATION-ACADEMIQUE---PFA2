@@ -1,0 +1,100 @@
+<link href="../dashboard/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dashboard/css/helper.css" rel="stylesheet">
+    <link href="../dashboard/css/style.css" rel="stylesheet">
+
+<div class="page-wrapper">
+	<!-- Bread crumb -->
+         <div class="row page-titles">
+             <div class="col-md-5 align-self-center">
+                 <h3 class="text-primary">Etudiants non confirmes</h3> 
+             </div>
+             <div class="col-md-7 align-self-center">
+                 <ol class="breadcrumb">
+                     <li class="bredcrumb-item"><a href="javascript:void(0)">Tableau de Bord </a></li>
+                     <li class="breadcrumb-item active">> Etudiants non confirmes</li>
+                 </ol>
+              </div>
+          </div>
+     <!-- End Bread crumb -->
+<!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                
+                                <div class="table-responsive m-t-40">
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Prenom</th>
+                                                <th>Classe</th>
+                                                <th>Description</th>
+                                                <th>Age</th>
+                                                <th>Date d'Inscription</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Prenom</th>
+                                                <th>Classe</th>
+                                                <th>Description</th>
+                                                <th>Age</th>
+                                                <th>Date d'Inscription</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr ng-repeat="e in listeetudiantsnonconfirmes">
+                                                <td>{{e.nom}}</td>
+                                                <td>{{e.prenom}}</td>
+                                                <td>
+                                                	<select id="classeID" class="form-control " ng-model="etudiant.classe"  ng-options="idc.idClasse as idc.idClasse for idc in classes">
+													</select>
+												</td>
+												<td>{{e.description}}</td>
+                                                <td>{{e.age}}</td>
+                                                <td>{{e.dateDeCreation}}</td>
+                                                <td>
+                                                	<button class="btn btn-success btn-sm" ng-click="confirmer(etudiant.classe,e.idEtudiant)">Confirmer</button>
+													<button class="btn btn-danger btn-sm" ng-click="supprimer(e.idEtudiant)">Supprimer</button>
+                                                </td>
+                                            </tr>
+                                         </tbody>
+                                  </table>
+                             </div>
+                      	</div>
+                      	</div>
+                      	</div>
+                      	</div>
+                      	</div>
+    <!--  tableau hcen -->                  	
+	<!-- <table class="table table-bordered table-striped ">
+		<tr ><th class="col-sm-2">Nom</th><th class="col-sm-2">Prenom</th><th class="col-sm-2">Profil</th><th class="col-sm-2">Classe</th>
+		<th class="col-sm-2" >Action</th></tr>
+		<tr ng-repeat="e in listeetudiantsnonconfirmes">
+			<td>{{e.nom}}</td><td>{{e.prenom}}</td><td><button class="btn btn-default" ng-click="getSelectedEtudiant(e.idEtudiant)">Voir Profil</button></td><td><div class="col-sm-8">
+					
+				</div></td>
+			<td><button class="btn btn-success btn-sm" ng-click="confirmer(etudiant.classe,e.idEtudiant)">Confirmer</button>
+			<button class="btn btn-danger btn-sm" ng-click="supprimer(e.idEtudiant)">Supprimer</button></td>
+		</tr>
+	</table> -->
+</div>
+
+
+    <script src="../dashboard/js/lib/datatables/datatables.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/datatables-init.js"></script>
+

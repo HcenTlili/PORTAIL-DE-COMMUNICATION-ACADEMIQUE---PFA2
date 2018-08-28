@@ -1,0 +1,321 @@
+
+	<!-- <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
+
+	
+	
+	
+	
+<!-- Bootstrap  -->
+	
+	<!-- Owl Carousel  -->
+
+	<link rel="stylesheet" href="../css/owl.theme.default.min.css">
+	<!-- Style -->
+	
+	<!-- <link rel="stylesheet" href="../css/owl.theme.default.min.css">-->
+	 
+	<link rel="stylesheet" href="../css/style.css">
+
+	
+	
+
+	
+
+<!-- Home -->
+	<div class="home">
+
+		<!-- Hero Slider -->
+		<div class="hero_slider_container">
+			<div class="hero_slider owl-carousel">
+				
+				<!-- Hero Slide -->
+				<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(../images/slider_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Votre espace educatif!</h1>
+						</div>
+					</div>
+				</div>
+				
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+	<div class="hero_boxes">
+		<div class="hero_boxes_inner">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-4 hero_box_col">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="../images/earth-globe.svg" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Nos Cours</h2>
+								<a ui-sref="cours" class="hero_box_link">Afficher plus</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 hero_box_col">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="../images/books.svg" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Nos Fillieres</h2>
+								<a ui-sref="classes" class="hero_box_link">Afficher plus</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 hero_box_col">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="../images/professor.svg" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Nos Enseignants</h2>
+								<a ui-sref="enseignants" class="hero_box_link">Afficher plus</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Popular -->
+
+	<div class="popular page_section">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1>Cours Populaires</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="row course_boxes">
+				<div class="popular page_section">
+<div class="container">
+<div class="row course_boxes">
+	<div class="col-lg-4 course_box" ng-repeat="c in acceuilCtrl.cours | limitTo : 3">
+		<div class="card">
+				<div class="card-body text-center">
+					<div class="card-title"><a href={{c.document.urlPath}} ng-click="coursCtrl.m_a_jNbreLecture(c)">{{c.nomCours}}</a></div>
+					<div class="card-text">Disponible dans le portail , rejoignez une des classes suivantes</div>
+				</div>
+				<div class="price_box d-flex flex-row align-items-center">
+					<div >
+						Classes :
+					</div>
+					<div class="course_author_name" ng-repeat="m in c.classesId"> <span>{{m}}</span></div>
+					
+				</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>	
+
+
+				
+			</div>
+		</div>		
+	</div>
+
+	<!-- Register -->
+
+	<section id="fh5co-team" class="fh5co-bg-color" data-section="equipe" ng-controller="PublicController">
+		<div class="fh5co-team">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 section-heading text-center">
+						<h2 class="to-animate"><span>Les etudiants actifs</span></h2>
+						&nbsp; &nbsp;&nbsp;&nbsp;<div class="row">
+							<div class="col-md-8 col-md-offset-2 subtext">
+								<h3 class="to-animate"> Les 3 etudiants les plus actifs en termes de passage d'evaluations. </h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" ng-src={{actifs[0].photo.urlPath}} alt="Roger Garfield"></div>
+							<h3>{{actifs[0].nom}} {{actifs[0].prenom}}</h3>
+							<span class="position">{{actifs[0].username}}</span>
+							<p>Appartenant a la classe {{actifs[0].idClasse}}.</p>
+							
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" ng-src={{actifs[1].photo.urlPath}} alt="Roger Garfield"></div>
+							<h3>{{actifs[1].nom}} {{actifs[1].prenom}}</h3>
+							<span class="position">{{actifs[1].username}}</span>
+							<p>Appartenant a la classe {{actifs[1].idClasse}}.</p>
+							
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" ng-src={{actifs[2].photo.urlPath}} alt="Roger Garfield"></div>
+							<h3>{{actifs[2].nom}} {{actifs[2].prenom}}</h3>
+							<span class="position">{{actifs[2].username}}</span>
+							<p>Appartenant a la classe {{actifs[2].idClasse}}.</p>
+							
+						</div>
+					</div>
+					
+					<!-- <div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/person2.jpg" alt="Roger Garfield"></div>
+							<h3>Kevin Steve</h3>
+							<span class="position">Co-Founder, Product Designer</span>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+							<ul class="social-media">
+								<li><a href="#" class="facebook"><i class="icon-facebook"></i></a></li>
+								<li><a href="#" class="twitter"><i class="icon-twitter"></i></a></li>
+								<li><a href="#" class="dribbble"><i class="icon-dribbble"></i></a></li>
+								<li><a href="#" class="codepen"><i class="icon-codepen"></i></a></li>
+								<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/person3.jpg" alt="Roger Garfield"></div>
+							<h3>Ross Standford</h3>
+							<span class="position">Full Stack Developer</span>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+							<ul class="social-media">
+								<li><a href="#" class="facebook"><i class="icon-facebook"></i></a></li>
+								<li><a href="#" class="twitter"><i class="icon-twitter"></i></a></li>
+								<li><a href="#" class="dribbble"><i class="icon-dribbble"></i></a></li>
+								<li><a href="#" class="codepen"><i class="icon-codepen"></i></a></li>
+								<li><a href="#" class="github"><i class="icon-github-alt"></i></a></li>
+							</ul>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+	<!-- Services -->
+
+	<div class="services page_section">
+		
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1>Tout ce qu'il faut pour demarrer</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="row services_row">
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="../images/earth-globe.svg" alt="">
+					</div>
+					<h3>C'est quoi Education MOOC ?</h3>
+					<p>Un portail de communication academique tunisien visant l'amelioration de l'education numerique en Tunisie</p>
+				</div>
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="../images/exam.svg" alt="">
+					</div>
+					<h3>J'ai un probleme technique , a qui envoyer un email?</h3>
+					<p>Utiliser le service contact , nous vous repondrons dans les plus courtes delais.</p>
+				</div>
+
+				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="../images/books.svg" alt="">
+					</div>
+					<h3>Existe-t-il une version mobile du MOOC?</h3>
+					<p>Evidemment , Plusieurs fonctionnalites sont presents en une application mobile . L'application web est aussi developpe en mode Responsive.</p>
+			
+					</div>
+
+				
+			</div>
+		</div>
+	</div>
+	<!-- <section id="fh5co-faq" class="fh5co-bg-color" data-section="faq">
+		<div class="fh5co-faq">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 section-heading text-center">
+						<h2 class="to-animate"><span>Questions</span></h2>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 subtext">
+								<h3 class="to-animate">Tout qu'il faut connaitre avant de demarrer</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="box-faq to-animate-2">
+							<i class="icon-check2"></i>
+							<div class="desc">
+								<h3>C'est quoi Education MOOC ?</h3>
+								<p>Un portail de communication académique tunisien visant l'amélioration de l'éducation numérique en Tunisie</p>
+							</div>
+						</div>
+						<div class="box-faq to-animate-2">
+							<i class="icon-check2"></i>
+							<div class="desc">
+								<h3>J'ai un problème technique , à qui envoyer un email? </h3>
+								<p>Contacter notre équipe décrite ci-dessous.</p>
+							</div>
+						</div>
+						
+					</div>
+
+					<div class="col-md-6">
+						
+						<div class="box-faq to-animate-2">
+							<i class="icon-check2"></i>
+							<div class="desc">
+								<h3>Est-ceque je peux utiliser un nom d'utilisateur déjà utilisé?</h3>
+								<p>Non , les noms d'utilisateurs doivent être différents pour tous les utilisateurs du MOOC.</p>
+							</div>
+						</div>
+						<div class="box-faq to-animate-2">
+							<i class="icon-check2"></i>
+							<div class="desc">
+								<h3>Existe-t-il une version mobile du MOOC?</h3>
+								<p>Evidemment , Plusieurs fonctionnalités sont présents en une application mobile . L'application web est aussi développé en mode Responsive</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+ -->
+	
+
+	<!-- Testimonials -->
+
+	
+	<!-- Events -->
+
+	
+
+			
+	

@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css" href="../styles/courses_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/courses_responsive.css">
+
+<link rel="stylesheet" href="../css/angularjs-datetime-picker.css"/>
+<div class="home">
+
+		<div class="hero_slider_container">
+			<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(../images/search_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Quiz</span></h1>
+						</div>
+					</div>
+				</div>
+		</div>
+				
+</div>
+
+<div id="conteneur">
+  <div>
+  <p>L enonce de l'examen : </p>  <br>
+  {{examen}}
+  
+  </div>
+  <div>
+  <form>
+  <textarea rows="20" cols="40" ng-model="reponse.contenureponse"></textarea>
+  <input type="button" class="btn btn-default" Value="Enregistrer la reponse" ng-click="repondre()">
+  </form>
+  </div>
+  
+</div>
+<style>
+#conteneur {
+  border: 1px solid;
+  overflow: hidden;
+}
+#conteneur div {
+  width: 50%;
+  float: left;
+}
+#conteneur {
+  height: 1%;
+}
+
+</style>

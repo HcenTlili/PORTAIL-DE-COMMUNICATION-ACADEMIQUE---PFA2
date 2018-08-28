@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="../styles/courses_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/courses_responsive.css">
+
+<link rel="stylesheet" href="../css/angularjs-datetime-picker.css"/>
+<div class="home">
+
+		<div class="hero_slider_container">
+			<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(../images/search_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Examen</span></h1>
+						</div>
+					</div>
+				</div>
+		</div>
+				
+</div>
+
+<div class="col-sm-8">
+<p>La classe</p>
+<table class="table table-striped ">
+<tr><th>ID de l' examen</th><th>Acces a l' examen</th></tr>
+<tr ng-repeat="c in examens ">
+<td>{{c._id}}</td><td><input type="button" value="Passer l examen" ng-click="acceder(c)" class="btn btn-primary">
+</tr>
+</table>
+</div>s

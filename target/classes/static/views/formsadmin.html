@@ -1,0 +1,257 @@
+<!-- Page wrapper  -->
+        <div class="page-wrapper">
+            <!-- Bread crumb -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-primary">Dashboard</h3> </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End Bread crumb -->
+            <!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card card-outline-primary">
+                            <div class="card-header">
+                                <h4 class="m-b-0 text-white">Formulaire d'inscription - Etudiant</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="#">
+                                    <div class="form-body">
+                                        <h3 class="card-title m-t-15">Info Utilisateur</h3>
+                                        <hr>
+                                        <div class="row p-t-20">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Nom</label>
+                                                    <input type="text" class="form-control" ng-model="formsAdminCtrl.nouveauEtudiant.nom"></div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group has-danger">
+                                                    <label class="control-label">Prenom</label>
+                                                    <input type="text"  class="form-control form-control-danger" ng-model="formsAdminCtrl.nouveauEtudiant.prenom"> </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row p-t-20">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Nom d'utilisateur:</label>
+                                                    <input type="text"  class="form-control" ng-model="formsAdminCtrl.nouveauEtudiant.username"></div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group has-danger">
+                                                    <label class="control-label">Mot de Passe</label>
+                                                    <input type="password"  class="form-control form-control-danger" ng-model="formsAdminCtrl.nouveauEtudiant.password"> </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <!-- /row -->
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <div class="form-group">
+                                                    <label>Adress Mail</label>
+                                                    <input type="text" class="form-control" ng-model="formsAdminCtrl.nouveauEtudiant.addressMail">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--/row-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Sexe</label>
+                                                    <select class="form-control custom-select" ng-model="formsAdminCtrl.nouveauEtudiant.sexe" ng-click="formsAdminCtrl.updatePhoto(2)">
+                                                        <option value="male" >Male</option>
+                                                        <option value="femelle">Femelle</option>
+                                                    </select>
+                                                    </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Age</label>
+                                                    <input type="text" class="form-control" ng-model="formsAdminCtrl.nouveauEtudiant.age">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <!--/row-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group  has-success">
+                                                    <label class="control-label">Classes</label>
+                                                    <select  class="form-control" data-placeholder="Choisir classe" tabindex="1"
+					 									ng-model="formsAdminCtrl.nouveauEtudiant.idClasse" 
+        												ng-options="item.idClasse as item.idClasse for item in formsAdminCtrl.classes">
+													</select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                            	<div class="form-group">
+                                                    <label>Telephone</label>
+                                                    <input type="text" class="form-control" ng-model="formsAdminCtrl.nouveauEtudiant.telephone">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            
+                                                <div class="form-group">
+                                                    <label>Photo de Profil</label>
+                                                    <input type="file" class="form-control" file-model="formsAdminCtrl.uploadedImage1">
+                                                </div>
+                                                <div>
+                                                	<button type="button" class="btn btn-dark btn-flat btn-addon m-b-10 m-l-5" ng-click="formsAdminCtrl.doUploadImage(1)">
+                                                	<i class="ti-user"></i>Confirmer Image</button><br/>
+                                                	<small class="form-control-feedback"> clicker pour visualiser l'image </small>
+                                                </div>
+                                           
+                                                
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                            	<img ng-src={{formsAdminCtrl.nouveauEtudiant.photo.urlPath}} class="img-thumbnail"  id="pic" />
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-success" ng-click="formsAdminCtrl.ajouterEtudiant()"> <i class="fa fa-check"></i> Enregistrer</button>
+                                        <button type="button" class="btn btn-inverse" ng-click="formsAdminCtrl.annulerEtudiant()">Annuler</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card card-outline-primary">
+                            <div class="card-header">
+                                <h4 class="m-b-0 text-white">Formulaire d'inscription - Enseignant</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="#">
+                                    <div class="form-body">
+                                        <h3 class="card-title m-t-15">Info Utilisateur</h3>
+                                        <hr>
+                                        <div class="row p-t-20">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Nom</label>
+                                                    <input type="text" id="firstName" class="form-control" ng-model="formsAdminCtrl.nouveauEnseignant.nom"></div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group has-danger">
+                                                    <label class="control-label">Prenom</label>
+                                                    <input type="text" id="lastName" class="form-control form-control-danger" ng-model="formsAdminCtrl.nouveauEnseignant.prenom"> </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row p-t-20">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Nom d'utilisateur:</label>
+                                                    <input type="text" id="userName" class="form-control" ng-model="formsAdminCtrl.nouveauEnseignant.username"></div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group has-danger">
+                                                    <label class="control-label">Mot de Passe</label>
+                                                    <input type="password" id="pass" class="form-control form-control-danger" ng-model="formsAdminCtrl.nouveauEnseignant.password"> </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <!-- /row -->
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <div class="form-group">
+                                                    <label>Adress Mail</label>
+                                                    <input type="text" class="form-control" ng-model="formsAdminCtrl.nouveauEnseignant.addressMail">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--/row-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Sexe</label>
+                                                    <select class="form-control custom-select" ng-model="formsAdminCtrl.nouveauEnseignant.sexe" ng-click="formsAdminCtrl.updatePhoto(2)">
+                                                        <option value="male" >Male</option>
+                                                        <option value="femelle">Femelle</option>
+                                                    </select>
+                                                    </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Age</label>
+                                                    <input type="text" class="form-control" ng-model="formsAdminCtrl.nouveauEnseignant.age">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <!--/row-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group  has-success">
+                                                    <label class="control-label">Classes</label>
+                                                    <select id="classeID" class="form-control" data-placeholder="Choose a Category" tabindex="1"
+					 									ng-model="formsAdminCtrl.nouveauEnseignant.classesId" 
+        												ng-options="item.idClasse as item.idClasse for item in formsAdminCtrl.classes" 
+        												ng-multiple="true" multiple>
+													</select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                            	<div class="form-group">
+                                                    <label>Telephone</label>
+                                                    <input type="text" class="form-control" ng-model="formsAdminCtrl.nouveauEnseignant.telephone">
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            
+                                                <div class="form-group">
+                                                    <label>Photo de Profil</label>
+                                                    <input type="file" class="form-control" file-model="formsAdminCtrl.uploadedImage2">
+                                                </div>
+                                                <div>
+                                                	<button type="button" class="btn btn-dark btn-flat btn-addon m-b-10 m-l-5" ng-click="formsAdminCtrl.doUploadImage(2)">
+                                                	<i class="ti-user"></i>Confirmer Image</button><br/>
+                                                	<small class="form-control-feedback"> clicker pour visualiser l'image </small>
+                                                </div>
+                                           
+                                                
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                            	<img ng-src={{formsAdminCtrl.nouveauEnseignant.photo.urlPath}} class="img-thumbnail"  id="pic" />
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-success" ng-click="formsAdminCtrl.ajouterEnseignant()"> <i class="fa fa-check"></i> Enregistrer</button>
+                                        <button type="button" class="btn btn-inverse" ng-click="formsAdminCtrl.annulerEnseignant()">Annuler</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>  
+
+                <!-- End PAge Content -->
+            </div>
+            <!-- End Container fluid  -->
+        </div>
+        <!-- End Page wrapper  -->

@@ -1,0 +1,60 @@
+<link rel="stylesheet" type="text/css" href="../styles/courses_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/courses_responsive.css">
+<div class="home">
+
+		<div class="hero_slider_container">
+			<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(../images/search_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Gerer Cours</span></h1>
+						</div>
+					</div>
+				</div>
+		</div>
+				
+</div>
+
+<div  class="upload">
+		<form class="form-horizontal">
+		<div class="form-group">
+				 <label class="control-label col-sm-4" for="classeID">Classe :</label>
+				<div class="col-sm-8">
+					<select id="classeID" class="form-control "
+					 ng-model="coursEnseignantCtrl.classesId" 
+        			ng-options="item as item for item in coursEnseignantCtrl.idsClasses" 
+        			ng-multiple=true multiple>
+					</select>
+				</div> 
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="uploadfile">Upload File:</label>
+				<div class="col-sm-5">
+					<input class="form-control" type="file" file-model = "coursEnseignantCtrl.uploadedFile" placeholder="Upload File"></input>
+				</div>
+			</div>
+			<div class="form-group"> 
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-default" ng-click = "coursEnseignantCtrl.doUploadFile()">Upload</button>
+			    </div>
+			</div>
+		</form>
+		<hr/>
+		
+	</div>
+	
+	<div class="display">
+		<div class="col-sm-offset-2">
+			<button type="button" class="btn btn-primary btn-block" ng-click="coursEnseignantCtrl.doGetFiles()">Get Files</button>
+		</div>
+		<hr/>
+		<div class="col-sm-offset-2" ng-model="coursEnseignantCtrl.lstFiles">
+			<ul >
+				<li  ng-repeat="file in coursEnseignantCtrl.lstFiles track by $index"><a href='{{file}}'><img width='50px' ng-src="{{file}}"></a></li>
+			</ul>
+		</div>			
+	</div>
+	
+	
+
+

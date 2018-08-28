@@ -1,0 +1,203 @@
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="../styles/news_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/news_responsive.css">
+<link rel="stylesheet" type="text/css" href="../styles/contact_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/contact_responsive.css">
+<div class="home">
+
+		<div class="hero_slider_container">
+			<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(../images/news_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Notre Forum</span></h1>
+						</div>
+					</div>
+				</div>
+		</div>
+				
+</div>
+
+
+<div class="news">
+		<div class="container">
+			<div class="row">
+				
+				<!-- News Column -->
+
+				<div class="col-lg-8" >
+					<div ng-show="blogCtrl.isSelected('blog')">
+					<div class="news_posts">
+					
+						<!-- News Post -->
+						<div class="news_post"  ng-repeat="post in blogCtrl.posts | startFrom:blogCtrl.currentPage*blogCtrl.pageSize | limitTo:blogCtrl.pageSize">
+							<div class="news_post_top d-flex flex-column flex-sm-row">
+								<div class="news_post_date_container">
+									<div class="news_post_date d-flex flex-column align-items-center justify-content-center">
+										<div>{{post.dateDeCreation|date:"dd"}}</div>
+										<div>{{post.dateDeCreation|date:"MMM"}}</div>
+									</div>
+								</div>
+								<div class="news_post_title_container">
+									<div class="news_post_title">
+										<a href="news_post.html">{{post.titre}}</a>
+									</div>
+									<div class="news_post_meta">
+										<span class="news_post_author"><a ui-sref="">par {{post.etudiant.nom}} {{post.etudiant.prenom}}</a></span>
+										<span>|</span>
+										<span class="news_post_comments"><a ui-sref="">{{post.commentaires.length}} Commentaires</a></span>
+									</div>
+								</div>
+							</div>
+							<div class="news_post_text">
+								<p>{{post.contenue | limitTo:220}}...</p>
+							</div>
+							<button class="btn btn-warning" ng-click="blogCtrl.voirPoste(post)" >Afficher plus</button>
+						</div>
+					</div>
+
+					<!-- Page Nav -->
+
+					<div class="news_page_nav" >
+						<ul>
+							<li class="active text-center trans_200" ><a ui-sref="" ng-click="blogCtrl.currentPage=blogCtrl.currentPage-1">Pré</a></li>
+							{{blogCtrl.currentPage+1}}/{{blogCtrl.posts.length/blogCtrl.pageSize}}
+							<li class="text-center trans_200"><a ui-sref="" ng-click="blogCtrl.currentPage=blogCtrl.currentPage+1">Sui</a></li>
+						</ul>
+					</div>
+					</div>
+					
+					
+					<!-- Contact Form -->
+					<div class="contact_form" ng-show="blogCtrl.isSelected('new')">
+						<div class="contact_title">Saisir Un post</div>
+
+						<div class="contact_form_container">
+							<form ng-submit="blogCtrl.addPost()">
+								<input id="contact_form_name" class="input_field contact_form_name" type="text" placeholder="Titre" required="required" data-error="Inserez votre titre" ng-model="blogCtrl.post.titre">
+								<label></label>
+								<textarea id="contact_form_message" class="text_field contact_form_message" name="contenu" placeholder="Contenu" required="required" data-error="Saisir votre message" ng-model="blogCtrl.post.contenue"></textarea>
+								<button id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="Submit" >Envoyer</button>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<!-- Sidebar Column -->
+				
+				<div class="col-lg-4">
+					<div class="sidebar">
+
+						<!-- Archives -->
+						<div class="sidebar_section">
+							<div class="sidebar_section_title">
+								<h3>Action</h3>
+							</div>
+							<ul class="sidebar_list">
+								<li class="sidebar_list_item"><a ui-sref="" ng-click="blogCtrl.selectTab('blog')">Toutes les posts</a></li>
+								<li class="sidebar_list_item"><a ui-sref="" ng-click="blogCtrl.selectTab('new')">Ajouter un post</a></li>
+
+							</ul>
+						</div>
+
+						<!-- Latest Posts -->
+
+						
+						<!-- Tags -->
+
+						
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 
+<div>
+	
+      <div class="topbar" >
+        <div class="container">
+          <div class="row">
+            <div class="col-s-4">
+              <h1 ng-click="blogCtrl.selectTab('blog')" class="push-left"><span>{{blogCtrl.title}}</span></h1>
+            </div>
+            <div class="offset-sm-2 col-sm-8">
+              <nav role='navigation' class="push-right">
+                <ul>
+                  <li><a href="#" ng-click="blogCtrl.selectTab('blog')">Toutes les posts</a></li> 
+                  <li><a href="#" ng-click="blogCtrl.selectTab('new')">Ajouter un post</a></li>
+                </ul>
+              </nav> 
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <ul class="post-grid" ng-show="blogCtrl.isSelected('blog')">
+          <li ng-repeat="post in blogCtrl.posts" class="col-sm-4" ng-class="{ 'reset-s' : $index%3==0 }" ng-click="blogCtrl.selectTab($index)" >
+          
+            <h3>{{post.titre}}</h3>
+            <p>{{post.contenue | limitTo:70}}...</p>
+            <p class="fa fa-comment push-left"> {{post.commentaires.length}}
+            </p>
+            <p class="fa fa-heart push-right"> {{post.likes}}
+            <input type="submit" class="btn btn-default"value="Aller" ng-click="blogCtrl.getCommentaires(post)"/>
+            </p>
+          </li>
+        </ul>
+        <div class="post" ng-repeat="post in blogCtrl.posts" ng-show="blogCtrl.isSelected($index)">
+         
+          <div>
+            
+            <h2>{{post.title}}</h2>
+            <img ng-src={{post.image}} ng-show="{{post.image}}"/>
+            <cite>by {{post.idUtilisateur}} on {{post.createdOn | date}}</cite>
+            <div class="post-body">
+               {{post.contenue}}
+            </div>
+            
+            
+              <button class="fa fa-heart" ng-click="post.likes = post.likes+1"> {{post.likes}}</button>
+              <h3>Commentaires</h3>
+              <ul>
+               <li ng-repeat="commentaire in blogCtrl.commentaires">
+                 <cite>- <b>{{commentaire.contenue}}</b></cite>
+               </li>
+              </ul>
+              <form name="commentForm" ng-submit="blogCtrl.addCommentaire(post.idPost)">
+              
+                
+                <h4>Ajouter un commentaire</h4>
+                  <textarea ng-model="blogCtrl.commentaire.contenue" cols="30" rows="10" required></textarea>
+                <label for="">by:</label>
+                  <input type="text" ng-model="commentCtrl.comment.author" required placeholder="Name"/>
+                  
+                  <input type="submit" value="Submit" />
+                </form>
+            
+        </div>
+      </div>
+        <div class="post" ng-show="blogCtrl.isSelected('new')">
+          <h2>Ajouer nouveau post</h2>
+          
+          <form name="postForm" ng-submit=" blogCtrl.addPost()" novalidate>
+                  <h4>Titre</h4>
+                  <input type="text" ng-model="blogCtrl.post.titre"/>
+                  <h4>Contenu</h4>
+                  <textarea ng-model="blogCtrl.post.contenue" ></textarea>
+
+                  
+                  <input type="submit" value="Submit" />
+                </select></form>
+          
+            </div>
+            
+          </div>
+        </div>
+        
+    </div>
+</div> -->

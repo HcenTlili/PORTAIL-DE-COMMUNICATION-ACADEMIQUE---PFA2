@@ -1,0 +1,103 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../styles/bootstrap4/bootstrap.min.css">
+<link href="../plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../styles/news_post_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/news_post_responsive.css">
+
+
+
+<div class="home">
+		<div class="home_background_container prlx_parent">
+			<div class="home_background prlx" style="background-image:url(images/news_background.jpg)"></div>
+		</div>
+		<div class="home_content">
+			<h1>Notre Forum</h1>
+		</div>
+	</div>
+	
+<div class="news">
+		<div class="container">
+			<div class="row">
+				
+				<!-- News Post Column -->
+
+				<div class="col-lg-8">
+					
+					<div class="news_post_container">
+						<!-- News Post -->
+						<div class="news_post">
+							<div class="news_post_top d-flex flex-column flex-sm-row">
+								<div class="news_post_date_container">
+									<div class="news_post_date d-flex flex-column align-items-center justify-content-center">
+										<div>{{posteCtrl.post.dateDeCreation|date:"dd"}}</div>
+										<div>{{posteCtrl.post.dateDeCreation|date:"MMM"}}</div>
+									</div>
+								</div>
+								<div class="news_post_title_container">
+									<div class="news_post_title">
+										<a href="news_post.html">{{posteCtrl.post.titre}}</a>
+									</div>
+									<div class="news_post_meta">
+										<span class="news_post_author"><a href="#">par {{posteCtrl.post.etudiant.nom}} {{post.etudiant.prenom}}</a></span>
+										<span>|</span>
+										<span class="news_post_comments"><a href="#">{{posteCtrl.post.commentaires.length}} Commentaires</a></span>
+									</div>
+								</div>
+							</div>
+							<div class="news_post_text">
+								<p>{{posteCtrl.post.contenue}}</p>
+								</div>
+
+							
+
+							
+						</div>
+
+					</div>
+					
+					<!-- Comments -->
+					<div class="news_post_comments">
+						<div class="comments_title">Commentaires</div>
+						<ul class="comments_list">
+							
+							<!-- Comment -->
+							<li class="comment" ng-repeat="com in posteCtrl.post.commentaires">
+								<div class="comment_container d-flex flex-row">
+									<div>
+										<div class="comment_image">
+											<img ng-src={{com.utilisateur.photo.urlPath}} alt="">
+										</div>
+									</div>
+									<div class="comment_content">
+										<div class="comment_meta">
+											<span class="comment_name"><a href="#">{{com.utilisateur.nom}} {{com.utilisateur.prenom}}</a></span>
+											<span class="comment_separator">|</span>
+											<span class="comment_date">{{com.dateDeCreation | date}}</span>
+											<span class="comment_separator">|</span>
+											<span class="comment_reply_link"><a ng-click="posteCtrl.jaime(com)" ui-sref="">j'aime <i class="fas fa-heart"></i> {{com.jaime}}</a></span>
+										</div>
+										<p class="comment_text">{{com.contenue}}</p>
+									</div>
+								</div>
+							</li>
+
+					<!-- Leave Comment -->
+
+					<div class="leave_comment">
+						<div class="leave_comment_title">Ajouter Un Commentaire</div>
+
+						<div class="leave_comment_form_container">
+							<form ng-submit="posteCtrl.addCommentaire()">
+								
+								<textarea id="comment_form_message" class="text_field contact_form_message" name="commetaire" placeholder="Commentaire" required="required" data-error="Ajouter un commentaire"
+								ng-model="posteCtrl.commentaire.contenue"></textarea>
+								
+								<button id="comment_send_btn" type="submit" class="comment_send_btn trans_200" value="Submit">Envoyer</button>
+							</form>
+						</div>
+					</div>
+
+				</div>
+		</div>
+	</div>
+</div>	

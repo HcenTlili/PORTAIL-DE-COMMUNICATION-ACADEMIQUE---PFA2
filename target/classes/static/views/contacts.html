@@ -1,0 +1,250 @@
+<!--  <style>
+            @media only screen and (max-width : 540px) 
+            {
+                .chat-sidebar
+                {
+                    display: none !important;
+                }
+                
+                .chat-popup
+                {
+                    display: none !important;
+                }
+            }
+            
+           
+            
+            .chat-sidebar
+            {
+                width: 240px;
+                position: fixed;
+                height: 100%;
+                right: 0px;
+                top: 0px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border: 1px solid rgba(29, 49, 91, .3);
+            }
+            
+            .sidebar-name 
+            {
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-bottom: 4px;
+                font-size: 12px;
+            }
+            
+            .sidebar-name span
+            {
+                padding-left: 5px;
+            }
+            
+            .sidebar-name a
+            {
+                display: block;
+                height: 100%;
+                text-decoration: none;
+                color: inherit;
+            }
+            
+            .sidebar-name:hover
+            {
+                background-color:#e1e2e5;
+            }
+            
+            .sidebar-name img
+            {
+                width: 32px;
+                height: 32px;
+                vertical-align:middle;
+            }
+            
+            .popup-box
+            {
+                
+                position: fixed;
+                bottom: 0px;
+                right: 260px;
+                height: 285px;
+                background-color: rgb(237, 239, 244);
+                width: 300px;
+                border: 1px solid rgba(29, 49, 91, .3);
+            }
+            
+            .popup-box .popup-head
+            {
+                background-color: #0f8db3;
+                padding: 5px;
+                color: white;
+                font-weight: bold;
+                font-size: 14px;
+                clear: both;
+            }
+            
+            .popup-box .popup-head .popup-head-left
+            {
+                float: left;
+            }
+            
+            .popup-box .popup-head .popup-head-right
+            {
+                float: right;
+                opacity: 0.5;
+            }
+            
+            .popup-box .popup-head .popup-head-right a
+            {
+                text-decoration: none;
+                color: inherit;
+            }
+            
+            .popup-box .popup-messages
+            {
+                height: 100%;
+                overflow-y: scroll;
+                
+            }
+            .text{
+            width : 100%;
+             position: absolute;
+                	bottom : 0px;
+                }
+
+
+        </style>
+
+ 
+
+        <div class="chat-sidebar">
+
+
+        <div class="row searchBox">
+          <div class="col-sm-12 searchBox-inner">
+            <div class="form-group has-feedback">
+              <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Search" ng-model="mc">
+              <span class="glyphicon glyphicon-search form-control-feedback" ></span>
+            </div>
+          </div>
+        </div>
+        <div data-toggle="collapse" href="#etudiants" class="categorie">
+		<div class="sidebar-name " style="height:100%"><span>Etudiants</span></div>
+		</div>
+		
+		<div id="etudiants" class="panel-collapse collapse in etudiants" ng-controller="EtudiantsController as etudiantsCtrl"> 
+        <div ng-repeat="e in etudiantsCtrl.etudiants | filter:mc" class="row sideBar">
+       
+						<div class="col-sm-4">
+		 
+                            <a href="#" ng-click="contactsCtrl.voirProfil(e)"><img ng-src="{{e.photo.urlPath}}" alt="Scott Stevens" class="img-responsive img-circle" /></a>
+                        </div>
+                        <div class="col-sm-8">
+                        	<span class="name">{{e.nom}} {{e.prenom}}</span>
+                        </div>
+                            
+                        <div class="col-sm-12">
+                            <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="{{e.telephone}}"></span>
+                             <button  class="btn btn-xs btn-default" ng-click="contactsCtrl.afficher_popup(e)">
+                            <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="{{e.addressMail}}"></span>
+                            </button>
+                        </div>
+
+		
+		</div>
+		</div>
+		
+		       
+
+        <div data-toggle="collapse" href="#enseignants" class="categorie">
+		<div class="sidebar-name" style="height:100%">Enseignants</div>
+		</div>
+        	<div data-toggle="false" id="enseignants" class="panel-collapse collapse in enseignants" ng-controller="EnseignantsController as enseignantsCtrl"> 
+        <div ng-repeat="e in enseignantsCtrl.enseignants" class="row sideBar">
+          <div class="col-sm-4">
+                            <img ng-src="{{e.photo.urlPath}}" alt="Scott Stevens" class="img-responsive img-circle" />
+                        </div>
+                        <div class="col-sm-8">
+                        <span class="name">{{e.nom}} {{e.prenom}}</span>
+                        </div>
+                            
+                            <div class="col-sm-12">
+                            <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="{{e.telephone}}"></span>
+                            <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="{{e.addressMail}}"></span>
+                        </div>
+		</div>  
+        </div>
+     
+
+         
+</div>
+
+<div ng-show="contactsCtrl.popupVisible" class="popup-box chat-popup">
+    <div class="popup-head">
+    <div class="popup-head-left" >{{contactsCtrl.amiCookie.nom}}</div>
+    <div class="popup-head-right"><a  ng-click="contactsCtrl.masquerPopup()" href="#">&#10005</a></div>
+	<div style="clear: both"></div>
+	</div>
+	<div class="popup-messages"><input class="text" type="text"/></div>
+</div>
+
+
+      
+ -->
+
+ 
+ 
+ <!--  guest contacts -->
+ 
+<link rel="stylesheet" type="text/css" href="../styles/contact_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/contact_responsive.css">
+	<div class="home">
+
+		<div class="hero_slider_container">
+			<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(../images/contact_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Contact</span></h1>
+						</div>
+					</div>
+				</div>
+		</div>
+				
+	</div>
+
+	<!-- Contact -->
+
+	<div class="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					
+					<!-- Contact Form -->
+					<div class="contact_form">
+						<div class="contact_title">Contactez l'administration</div>
+
+						<div class="contact_form_container">
+							<form action="post">
+								<input  class="input_field contact_form_name" type="text" placeholder="Nom" required="required" data-error="Inserez votre nom" ng-model="contactsCtrl.message.name">
+								<input id="contact_form_name" class="input_field contact_form_email" type="email" placeholder="E-mail" required="required" data-error="Inserez votre email" ng-model="contactsCtrl.message.mail">
+								<label></label>
+								<textarea id="contact_form_message" class="text_field contact_form_message" name="message" placeholder="Message" required="required" data-error="Saisir votre message" ng-model="contactsCtrl.message.message"></textarea>
+								<button  type="button" class="contact_send_btn trans_200" value="Submit" ng-click="contactsCtrl.envoyerMessage()">Envoyer message</button>
+							</form>
+						</div>
+					</div>
+						
+				</div>
+
+				<div class="col-lg-4">
+					<div class="about">
+						<div class="about_title">Saisissez bien l'adresse email</div>
+						<p class="about_text">Nous allons vous repondre dans les plus courts delais.</p>
+
+						
+
+					</div>
+				</div>
+
+			</div>
+		</div>			
+	</div>

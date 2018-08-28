@@ -1,0 +1,169 @@
+<link href="../dashboard/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dashboard/css/helper.css" rel="stylesheet">
+    <link href="../dashboard/css/style.css" rel="stylesheet">
+
+<div class="page-wrapper">
+	<!-- Bread crumb -->
+         <div class="row page-titles">
+             <div class="col-md-5 align-self-center">
+                 <h3 class="text-primary">Classes</h3> 
+             </div>
+             <div class="col-md-7 align-self-center">
+                 <ol class="breadcrumb">
+                     <li class="bredcrumb-item"><a href="javascript:void(0)">Tableau de Board </a></li>
+                     <li class="breadcrumb-item active">> Classes</li>
+                 </ol>
+              </div>
+          </div>
+     <!-- End Bread crumb -->
+<!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Exporter Le Tableaux</h4>
+                                <h6 class="card-subtitle">Choisir le type d'export  Copy, CSV, Excel, PDF</h6>
+                                <div class="table-responsive m-t-40">
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                            	<th>Indice</th>
+                                                <th>Classe</th>
+                                                <th>nombre etudiants</th>
+                                                <th>Voir Profil</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                            	<th>Indice</th>
+                                                <th>Classe</th>
+                                                <th>nombre etudiants</th>
+                                                <th>Voir Profil</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr ng-repeat="c in classesCtrl.classes">
+                                                <td>{{$index+1}}</td>
+                                                <td>{{c.idClasse}}</td>
+                                                <td>{{c.nbreEtudiants}}</td>
+                                                <td>
+                                                	<button class="btn btn-default" ng-click="getSelectedEtudiant(e.idEtudiant)">Voir Profil</button>
+                                                </td>
+                                            </tr>
+                                         </tbody>
+                                  </table>
+                             </div>
+                      	</div>
+                      	</div>
+                      	</div>
+                      	</div>
+                      	</div>
+
+</div>
+
+
+    <script src="../dashboard/js/lib/datatables/datatables.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/datatables-init.js"></script>
+
+
+
+
+
+<!-- 
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-8">
+<p>{{name}}</p>
+<table class="table table-striped ">
+<tr><th class="col-sm-1">Classe</th><th>Etudiants</th><th>Matiere</th></tr>
+<tr ng-repeat="c in classesCtrl.classes">
+<td>{{c.idClasse}}</td><td><input type="button" class="btn btn-default"
+ ng-click="classesCtrl.getEtudiantsParClasseId(c.idClasse)" value="plus de details" data-toggle="modal" data-target="#etudiantsModal"></td>
+</tr>
+</table>
+</div>
+<div name="form" class="col-sm-4">
+<div class="panel panel-primary">
+    <div class="panel-body">
+      <h3 class="text-on-pannel text-primary"><strong class="text-uppercase"> Ajouter une Classe </strong></h3>
+<form class="form-horizontal" name="ClasseForm" ng-submit="classesCtrl.ajouter()">
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="Classe ID">ID de Classe :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="Classe ID" id="Classe ID"
+						placeholder="Entrer Classe" ng-model="classesCtrl.classe.idClasse"/>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-6">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+			
+		</form>
+
+</div>
+</div>
+</div>
+  Modal
+  <div class="modal fade" id="etudiantsModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      Modal content
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Liste des etudiants</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+        <div ng-repeat="e in classesCtrl.listeEtudiants" class="col-sm-3">
+            <div  class="card">
+                <canvas class="header-bg" width="250" height="70" id="header-blur"></canvas>
+                <div class="avatar">
+                    <img ng-src={{e.photo.urlPath}} alt="" />
+                </div>
+                <div class="content">
+                    <p>{{e.nom}}  {{e.prenom}} <br>
+                       {{e.addressMail}}</p>
+                    <p><button type="button" class="btn btn-default">Contactez</button></p>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+         <div ng-repeat="e in classesCtrl.listeEtudiants" class="card" style="width: 20rem;">
+  <img class="card-img-top" ng-src={{e.photo.urlPath}} alt="Card image cap">
+  <div class="card-block" >
+    <h4 class="card-title">{{e.nom}}  {{e.prenom}}</h4>
+    <p class="card-text">Age : {{e.age}}</p>
+    <p class="card-text">Adresse Mail : {{e.addressMail}}</p>
+    <p class="card-text">Telephone : {{e.telephone}}</p>
+   
+  </div>
+</div> 
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  
+  
+</div>
+</div>
+</div>
+ -->

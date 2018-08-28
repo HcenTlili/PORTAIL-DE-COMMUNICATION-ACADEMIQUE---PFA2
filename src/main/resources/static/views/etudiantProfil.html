@@ -1,0 +1,147 @@
+<link rel="stylesheet" type="text/css" href="../styles/contact_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/contact_responsive.css">
+
+
+
+<div class="home">
+	<div class="hero_slider_container">
+		<div class="hero_slide">
+				<div class="hero_slide_background" style="background-image:url(../images/contact_background.jpg)"></div>
+				<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+					<div class="hero_slide_content text-center">
+						<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Profil</span></h1>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+<!--  profil template -->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<div class="container target">
+    <div class="row">
+        <div class="col-sm-10">
+        
+             <h1 class="">{{usern}}</h1>
+             <br>
+         <div class="row">
+        	<div class="col-sm-3">
+        	<button type="button" class="btn btn-info">Contacter Administrateur</button>
+        	</div>
+        </div>
+          
+
+        </div>
+        
+      <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" ng-src={{etudiant.photo.urlPath}}></a>
+
+        </div>
+    </div>
+  <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <!--left col-->
+            <ul class="list-group">
+                <li class="list-group-item text-muted" contenteditable="false">Profile</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">{{etudiant.nom}}</strong></span></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">{{etudiant.prenom}}</strong></span></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">{{etudiant.age}}</strong></span></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">{{etudiant.idClasse}} </strong></span></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">{{etudiant.addressMail}} </strong></span></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">{{etudiant.telephone}} </strong></span></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong class="">{{etudiant.dateCreation}} </strong></span></li>
+            </ul>
+        </div>
+        <!--/col-3-->
+        <div class="col-sm-9" style="" contenteditable="false">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{usern}}'s Description</div>
+                <div class="panel-body">{{etudiant.description}}
+
+                </div>
+            </div>
+            <div class="panel panel-default target">
+                <div class="panel-heading" contenteditable="false">Cours</div>
+                <div class="panel-body">
+                  <div class="row">
+				<div class="col-md-4" ng-repeat="c in cours">
+					<div class="thumbnail">
+						<div class="caption">
+							<h3>
+								{{c.nomCours}}
+							</h3>
+							<a href={{c.document.urlPath}}>Download</a>
+							<p>
+							
+							</p>
+						</div>
+					</div>
+				</div>
+            </div>
+                     
+            </div>
+                 
+        </div>
+              
+    </div>
+ </div>
+
+        
+        
+        
+	
+	
+</div>
+<!-- 
+<!-- Add icon library 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="card">
+  <img ng-src={{urlPath}} alt="John" style="width:60%">
+  <h1>{{etudiant.nom}} {{etudiant.prenom}}</h1>
+  <h1>Nom d'utilisateur :{{usern}}</h1>
+  <p class="title">Appartenant a la classe</p>
+  <p >{{etudiant.idClasse}}</p>
+  
+  <p><button>Contacter Administration</button></p>
+</div>
+<style >
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+</style> -->

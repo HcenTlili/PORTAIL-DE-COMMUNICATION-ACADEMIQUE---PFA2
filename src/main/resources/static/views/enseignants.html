@@ -1,0 +1,232 @@
+<link href="../dashboard/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dashboard/css/helper.css" rel="stylesheet">
+    <link href="../dashboard/css/style.css" rel="stylesheet">
+
+<div class="page-wrapper">
+	<!-- Bread crumb -->
+         <div class="row page-titles">
+             <div class="col-md-5 align-self-center">
+                 <h3 class="text-primary">Enseignants</h3> 
+             </div>
+             <div class="col-md-7 align-self-center">
+                 <ol class="breadcrumb">
+                     <li class="bredcrumb-item"><a href="javascript:void(0)">Tableau de Board </a></li>
+                     <li class="breadcrumb-item active">> Enseignants</li>
+                 </ol>
+              </div>
+          </div>
+     <!-- End Bread crumb -->
+<!-- Container fluid  -->
+            <div class="container-fluid">
+                <!-- Start Page Content -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                
+                                <div class="table-responsive m-t-40">
+                                    <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Prenom</th>
+                                                <th>Classes</th>
+                                                <th>Age</th>
+                                                <th>Date d'inscription</th>
+                                                <th>email</th>
+                                                <th>sexe</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Nom</th>
+                                                <th>Prenom</th>
+                                                <th>Classes</th>
+                                                <th>Age</th>
+                                                <th>Date d'inscription</th>
+                                                <th>email</th>
+                                                <th>sexe</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <tr ng-repeat="e in enseignantsCtrl.enseignants">
+                                                <td>{{e.nom}}</td>
+                                                <td>{{e.prenom}}</td>
+                                                
+                                                <td ><span ng-repeat="r in e.classesId">{{r}} </span></td>
+                                                <td>{{e.age}}</td>
+                                                <td>{{e.dateDeCreation}}</td>
+                                                <td>
+                                                	{{e.addressMail}}
+                                                 </td>
+                                                <td>
+                                                	{{e.sexe}}
+                                                	 </td>
+                                            </tr>
+                                         </tbody>
+                                  </table>
+                             </div>
+                      	</div>
+                      	</div>
+                      	</div>
+                      	</div>
+                      	</div>
+
+</div>
+
+
+    <script src="../dashboard/js/lib/datatables/datatables.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script src="../dashboard/js/lib/datatables/datatables-init.js"></script>
+
+
+
+
+
+
+<!-- 
+<div class="container-fluid">
+<div class="row">
+<div name ="tab" class="col-sm-7">
+<table class="table table-bordered table-striped ">
+<tr ><th class="col-sm-1">ID</th><th class="col-sm-2">Nom</th><th class="col-sm-2">Prenom</th><th class="col-sm-2">Classes</th>
+<th class="col-sm-2" >Action</th></tr>
+<tr ng-repeat="e in enseignantsCtrl.enseignants">
+<td>{{e.idEnseignant}}</td><td>{{e.nom}}</td><td>{{e.prenom}}</td>
+<td><input type="button" class="btn btn-default"
+ ng-click="enseignantsCtrl.getClassesParEnseignantId(e.idEnseignant)" value="plus de details" data-toggle="modal" data-target="#classesModal"></td><td><button class="btn btn-default" ng-click="enseignantsCtrl.getSelectedEtudiant(e.idEtudiant)">Voir Profil</button></td>
+
+</tr>
+</table>
+</div>
+<div class="col-sm-5">
+<div name="form" >
+
+  <div class="panel panel-primary">
+    <div class="panel-body">
+      <h3 class="text-on-pannel text-primary"><strong class="text-uppercase"> Ajouter un Enseignant </strong></h3>
+      <form class="form-horizontal" name="customerForm" ng-submit="enseignantsCtrl.ajouter()">
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="nomID">Nom :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="nom" id="nomID"
+						placeholder="Saisir Votre Nom" ng-model="enseignantsCtrl.user.nom" ng-change="enseignantsCtrl.update()"/>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="prenomID">Prenom :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="prenom" id="lastnameID"
+						placeholder="Saisir Votre Prenom" ng-model="enseignantsCtrl.user.prenom"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="ageID">Age :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="age" id="ageID"
+						placeholder="Saisir Votre age" ng-model="enseignantsCtrl.user.age"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="SexeID">Sexe :</label>
+				<div class="col-sm-8">
+					<select id="classeID" class="form-control " ng-init="enseignantsCtrl.user.sexe = enseignantsCtrl.sexes[0]" ng-model="enseignantsCtrl.user.sexe" ng-options="sexe for sexe in enseignantsCtrl.sexes"  ng-change="enseignantsCtrl.updatePhoto()" >
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="mailID">Adresse Mail :</label>
+				<div class="col-sm-8">
+					<input type="mail" class="form-control" name="mail" id="mailID"
+						placeholder="Saisir Votre Adresse Mail" ng-model="enseignantsCtrl.user.addressMail"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="phoneID">Numero de Telephone :</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="phone" id="phoneID"
+						placeholder="Saisir Votre Numero de Telephone" ng-model="enseignantsCtrl.user.telephone"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-6">
+					<input type="button" class="btn btn-default" value="Choisir Une Photo" data-toggle="modal" data-target="#photoModal">
+				</div>
+			</div>
+								
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="classeID">Classe :</label>
+				<div class="col-sm-8">
+					<select id="classeID" class="form-control "
+					 ng-model="enseignantsCtrl.user.classesId" 
+        			ng-options="item.idClasse as item.idClasse for item in enseignantsCtrl.classes" 
+        			ng-multiple="true" multiple>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="descriptionID">Description :</label>
+				<div class="col-sm-8">
+					<textarea class="form-control" name="description" id="descriptionID"
+						 ng-model="enseignantsCtrl.user.description"/>
+				</div>
+			</div>
+			<div class="form-group">
+			<div class="form-group">
+				<div class="col-sm-offset-4 col-sm-6">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+			
+		</form>
+</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="photoModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      Modal content
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Choisir Votre Photo de Profil</h4>
+        </div>
+        <div class="modal-body">
+        <form class="form-horizontal">
+         <div class="form-group">
+				<label class="control-label col-sm-4" for="photo">upload :</label>
+				<div class="col-sm-4">
+					<input type="file" file-model = "enseignantsCtrl.uploadedImage" class="form-control" name="photo" id="photoID"
+						placeholder="Choisir"/ >
+				</div>
+				<div class="form-group"> 
+			    <div class="col-sm-offset-3 col-sm-4">
+			      <button type="submit" class="btn btn-primary" ng-click = "enseignantsCtrl.doUploadImage()">Upload</button>
+			       </div>
+			</div>
+			<img width='150px' ng-src={{enseignantsCtrl.user.photo.urlPath}}/>
+			</div>
+        </form>
+        <hr/>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"  data-dismiss="modal">Done</button>
+        </div>
+      </div>
+      
+ </div>   
+	
+</div> -->

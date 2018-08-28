@@ -1,0 +1,33 @@
+{
+    "name": "com.example.hello",
+    "displayName": "HelloWorld",
+    "version": "1.0.0",
+    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "DatePicker": "^2.0.0",
+        "cordova-android": "^7.0.0",
+        "cordova-plugin-contacts": "^3.0.1",
+        "cordova-plugin-datepicker": "^0.9.3",
+        "cordova-plugin-device": "^2.0.1",
+        "cordova-plugin-globalization": "^1.0.9",
+        "cordova-plugin-whitelist": "^1.3.3"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-datepicker": {},
+            "cordova-plugin-globalization": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-contacts": {}
+        },
+        "platforms": [
+            "android"
+        ]
+    }
+}

@@ -1,0 +1,76 @@
+<link rel="stylesheet" type="text/css" href="../styles/courses_styles.css">
+<link rel="stylesheet" type="text/css" href="../styles/courses_responsive.css">
+
+<link rel="stylesheet" href="../css/angularjs-datetime-picker.css" />
+<meta charset="utf-8">
+<div class="home">
+
+		<div class="hero_slider_container">
+			<div class="hero_slide">
+					<div class="hero_slide_background" style="background-image:url(../images/search_background.jpg)"></div>
+					<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
+						<div class="hero_slide_content text-center">
+							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><span>Quiz</span></h1>
+						</div>
+					</div>
+				</div>
+		</div>
+				
+</div>
+
+
+
+
+<FORM>
+<div>
+Passer le Quiz :
+</div>
+<form>
+<div class="col-sm-8">
+
+Question 1 :<p>{{b0}}</p><br>
+Propositions :<p>{{b1}} {{b2}} {{b3}}</p><br>
+<div>  <select ng-model=r0 ng-options ="l for l in liste" ng-required="true">
+{{l}}</select></div>
+Question 2 :<p>{{c0}}</p><br>
+Propositions :<p>{{c1}} {{c2}} {{c3}}</p><br>
+<div>  <select ng-model=r1 ng-options ="l for l in liste" ng-required="true">
+{{l}}</select></div>
+Question 3 :<p>{{d0}}</p><br>
+Propositions :<p>{{d1}} {{d2}} {{d3}}</p><br>
+<div>  <select ng-model=r2 ng-options ="l for l in liste" ng-required="true">
+{{l}}</select></div>
+Question 4 :<p>{{e0}}</p><br>
+Propositions :<p>{{e1}} {{e2}} {{e3}}</p><br>
+<div>  <select ng-model=r3 ng-options ="l for l in liste" ng-required="true">
+{{l}}</select></div>
+Question 5 :<p>{{f0}}</p><br>
+Propositions :<p>{{f1}} {{f2}} {{f3}}</p><br>
+<div>  <select ng-model=r4 ng-options ="l for l in liste" ng-required="true">
+{{l}}</select></div>
+Question 6 :<p>{{g0}}</p><br>
+Propositions :<p>{{g1}} {{g2}} {{g3}}</p><br>
+<div>  <select ng-model=r5 ng-options ="l for l in liste" ng-required="true">
+{{l}}</select></div>
+Question 7 :<p>{{h0}}</p><br>
+Propositions :<p>{{h1}} {{h2}} {{h3}}</p><br>
+<div>  <select ng-model=r6 ng-options ="l for l in liste" ng-required="true">
+{{l}}</select></div>
+Question 8 :<p>{{i0}}</p><br>
+Propositions :<p>{{i1}} {{i2}} {{i3}}</p><br>
+<div>  <select ng-model=r7 ng-options ="l for l in liste" ng-required="true">
+{{l}}</select></div>
+Question 9 :<p>{{j0}}</p><br>
+Propositions :<p>{{j1}} {{j2}} {{j3}}</p><br>
+<div>  <select ng-model=r8 ng-options ="l for l in liste" ng-required="true">
+{{l}}</select></div>
+Question 10 :<p>{{k0}}</p><br>
+Propositions :<p>{{k1}} {{k2}} {{k3}}</p><br>
+<div>  <select ng-model=r9 ng-options ="l for l in liste" ng-required="true">
+{{l}}</select></div>
+<input type="button" ng-click="valider()" value="value">
+{{resultat}}
+</div>
+
+ </form>
+</FORM>
